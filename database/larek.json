@@ -1,0 +1,50 @@
+{
+    "852666681": {
+        "larek": {
+            "owned": true,
+            "status": "stopped",
+            "level": 3,
+            "stock": 543,
+            "income": 61000,
+            "cycle": 3600,
+            "last_cycle": 1771672113.7690787,
+            "cashbox": 0,
+            "total_earned": 602886,
+            "upgrades": 3,
+            "max_stock": 550,
+            "max_cash": 600000
+        }
+    },
+    "1282393103": {
+        "larek": {
+            "owned": true,
+            "status": "working",
+            "level": 3,
+            "stock": 548,
+            "income": 61000,
+            "cycle": 3600,
+            "last_cycle": 1771627536.9039488,
+            "cashbox": 89604,
+            "total_earned": 89604,
+            "upgrades": 3,
+            "max_stock": 550,
+            "max_cash": 600000
+        }
+    },
+    "8477212597": {
+        "larek": {
+            "owned": true,
+            "status": "working",
+            "level": 2,
+            "stock": 100,
+            "income": 45500,
+            "cycle": 3600,
+            "last_cycle": 1771695182.1823115,
+            "cashbox": 0,
+            "total_earned": 0,
+            "upgrades": 2,
+            "max_stock": 350,
+            "max_cash": 250000
+        }
+    }
+}

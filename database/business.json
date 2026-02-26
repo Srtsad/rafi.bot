@@ -1,0 +1,32 @@
+{
+    "852666681": {
+        "vape": {
+            "owned": true,
+            "status": "stopped",
+            "level": 0,
+            "stock": 0,
+            "income": 25000,
+            "cycle": 3600,
+            "last_cycle": 0,
+            "cashbox": 0,
+            "total_earned": 0,
+            "upgrades": 0,
+            "max_stock": 120,
+            "max_cash": 60000
+        }
+    },
+    "8477212597": {
+        "vape": {
+            "owned": false,
+            "status": "stopped",
+            "level": 0,
+            "stock": 0,
+            "income": 25000,
+            "cycle": 3600,
+            "last_cycle": 0,
+            "cashbox": 0,
+            "total_earned": 0,
+            "upgrades": 0
+        }
+    }
+}

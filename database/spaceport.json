@@ -1,0 +1,18 @@
+{
+    "852666681": {
+        "space": {
+            "owned": true,
+            "status": "closed",
+            "level": 0,
+            "stock": 4,
+            "income": 80000000,
+            "cycle": 3600,
+            "last_cycle": 1771672113.8233366,
+            "cashbox": 800000,
+            "total_earned": 80000000,
+            "upgrades": 0,
+            "max_stock": 5,
+            "max_cash": 800000
+        }
+    }
+}

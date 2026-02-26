@@ -1,0 +1,18 @@
+{
+    "852666681": {
+        "yacht": {
+            "owned": true,
+            "status": "closed",
+            "level": 0,
+            "stock": 7,
+            "income": 1000000,
+            "cycle": 3600,
+            "last_cycle": 1771672113.8132396,
+            "cashbox": 3000000,
+            "total_earned": 3000000,
+            "upgrades": 0,
+            "max_stock": 10,
+            "max_cash": 3000000
+        }
+    }
+}

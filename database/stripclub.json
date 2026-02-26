@@ -1,0 +1,48 @@
+{
+    "7455246670": {
+        "strip": {
+            "owned": false,
+            "status": "closed",
+            "level": 0,
+            "staff": 0,
+            "income": 400000,
+            "cycle": 3600,
+            "last_cycle": 0,
+            "cashbox": 0,
+            "total_earned": 0,
+            "upgrades": 0
+        }
+    },
+    "8452508009": {
+        "strip": {
+            "owned": true,
+            "status": "closed",
+            "level": 3,
+            "staff": 39,
+            "income": 1200000,
+            "cycle": 3600,
+            "last_cycle": 1771878953.1693063,
+            "cashbox": 1200000,
+            "total_earned": 1200000,
+            "upgrades": 3,
+            "max_staff": 40,
+            "max_cash": 1200000
+        }
+    },
+    "8477212597": {
+        "strip": {
+            "owned": true,
+            "status": "closed",
+            "level": 3,
+            "staff": 39,
+            "income": 1200000,
+            "cycle": 3600,
+            "last_cycle": 1772116079.8117955,
+            "cashbox": 1200000,
+            "total_earned": 3200000,
+            "upgrades": 3,
+            "max_staff": 40,
+            "max_cash": 1200000
+        }
+    }
+}

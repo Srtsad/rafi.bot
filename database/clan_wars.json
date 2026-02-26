@@ -1,0 +1,9 @@
+{
+    "pending": {
+        "attacker": "1",
+        "defender": "2",
+        "money": 0,
+        "rep": 0
+    },
+    "last_set": "rep"
+}

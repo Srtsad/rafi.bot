@@ -1,0 +1,18 @@
+{
+    "852666681": {
+        "dc": {
+            "owned": true,
+            "status": "stopped",
+            "level": 3,
+            "stock": 32,
+            "income": 600000000,
+            "cycle": 3600,
+            "last_cycle": 1771691169.205638,
+            "cashbox": 9000000000,
+            "total_earned": 9034216296,
+            "upgrades": 3,
+            "max_stock": 50,
+            "max_cash": 9000000000
+        }
+    }
+}

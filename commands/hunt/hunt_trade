@@ -1,0 +1,229 @@
+
+
+from aiogram import Router, F, types
+from utils.helpers import get_player, save_player
+import json
+import os
+import time
+
+router = Router()
+HUNT_DB = "database/hunt.json"
+
+# =========================
+# СОЗДАНИЕ БАЗЫ
+# =========================
+if not os.path.exists("database"):
+    os.makedirs("database")
+
+if not os.path.exists(HUNT_DB):
+    with open(HUNT_DB, "w", encoding="utf-8") as f:
+        json.dump({}, f, indent=4)
+
+def load_db():
+    with open(HUNT_DB, "r", encoding="utf-8") as f:
+        return json.load(f)
+def get_boosts_bonus(player):
+    boosts = player.get("boosts", {})
+    now = time.time()
+
+    bonus = {
+        "обычная": 0,
+        "редкая": 0,
+        "эпик": 0,
+        "мифик": 0,
+        "легендарка": 0
+    }
+
+    for boost_name, data in BOOSTS.items():
+        key = data["key"]
+
+        # если буст активен по времени
+        if key in boosts and boosts[key] > now:
+            for rarity, percent in data["bonus"].items():
+                bonus[rarity] += percent
+
+    return bonus
+def roll_loot(player):
+    chances = BASE_CHANCE.copy()
+    bonus = get_boosts_bonus(player)
+
+    # прибавляем бонусы бустов
+    for rarity in chances:
+        chances[rarity] += bonus.get(rarity, 0)
+
+    total = sum(chances.values())
+    r = random.uniform(0, total)
+
+    upto = 0
+    for rarity, chance in chances.items():
+        if upto + chance >= r:
+            return rarity
+        upto += chance
+
+    return "обычная"
+
+def save_db(db):
+    with open(HUNT_DB, "w", encoding="utf-8") as f:
+        json.dump(db, f, indent=4, ensure_ascii=False)
+
+# =========================
+# ЦЕНЫ
+# =========================
+PRICES = {
+    "патроны": 50000,
+    "жилет": 120000,
+    "нож": 90000,
+    "прицел": 200000
+}
+
+# =========================
+# КУПИТЬ ПРЕДМЕТ
+# =========================
+@router.message(F.text.lower().startswith("купить"))
+async def buy_item(message: types.Message):
+    text = message.text.lower().strip()
+    player = get_player(message.from_user.id)
+    db = load_db()
+    uid = str(message.from_user.id)
+
+    if uid not in db:
+        return await message.answer("Напиши: охота")
+
+    user = db[uid]
+    if "buffs" not in user:
+        user["buffs"] = {}
+
+    # ========= ПАТРОНЫ =========
+    if "патроны" in text:
+        price = PRICES["патроны"]
+        if player["money"] < price:
+            return await message.answer("❌ Не хватает денег")
+        player["money"] -= price
+        user["ammo"] = user.get("ammo", 0) + 10
+        save_player(message.from_user.id, player)
+        save_db(db)
+        return await message.answer("🔫 Куплено 10 патронов")
+
+    # ========= ЖИЛЕТ =========
+    if "жилет" in text:
+        price = PRICES["жилет"]
+        if player["money"] < price:
+            return await message.answer("❌ Не хватает денег")
+        player["money"] -= price
+        user["buffs"]["vest"] = int(time.time()) + 3600
+        save_player(message.from_user.id, player)
+        save_db(db)
+        return await message.answer("🧥 Куплен жилет (1 час бонус)")
+
+    # ========= НОЖ =========
+    if "нож" in text:
+        price = PRICES["нож"]
+        if player["money"] < price:
+            return await message.answer("❌ Не хватает денег")
+        player["money"] -= price
+        user["buffs"]["knife"] = int(time.time()) + 3600
+        save_player(message.from_user.id, player)
+        save_db(db)
+        return await message.answer("🔪 Куплен нож (1 час бонус)")
+
+    # ========= ПРИЦЕЛ =========
+    if "прицел" in text:
+        price = PRICES["прицел"]
+        if player["money"] < price:
+            return await message.answer("❌ Не хватает денег")
+        player["money"] -= price
+        user["buffs"]["scope"] = int(time.time()) + 3600
+        save_player(message.from_user.id, player)
+        save_db(db)
+        return await message.answer("🎯 Куплен прицел (1 час бонус)")
+
+    await message.answer("❌ Предмет не найден")
+
+# =========================
+# ПРОДАТЬ ВСЁ
+# =========================
+@router.message(F.text.lower().in_(["продать всё","продать все"]))
+async def sell_all(message: types.Message):
+    db = load_db()
+    uid = str(message.from_user.id)
+    if uid not in db:
+        return
+
+    user = db[uid]
+    player = get_player(message.from_user.id)
+    if not user.get("loot"):
+        return await message.answer("❌ Нет добычи")
+
+    total = 0
+    PRICE_LIST = {
+        "🥩 Мясо":25,
+        "🦴 Кости зверя":18,
+        "🪶 Перья":12,
+        "🦌 Обычная шкура":120,
+        "🐗 Клык дикого вепря":900,
+        "🐺 Шкура волка":480,
+        "🦅 Перо беркута":1100,
+        "🐻 Коготь медведя":1200,
+        "🦌 Рога оленя":600,
+        "🐺 Шкура альфа-волка":2500,
+        "🦌 Рога матёрого оленя":1800,
+        "🐆 Шкура рыси":2900,
+        "👑 Голова альфа-волка":6000,
+        "🌟 Легендарная шкура зверя":8500,
+    }
+
+    for item, qty in user["loot"].items():
+        if item in PRICE_LIST:
+            total += PRICE_LIST[item] * qty
+
+    user["loot"] = {}
+    player["money"] += total
+    save_player(message.from_user.id, player)
+    save_db(db)
+    await message.answer(f"💰 Продано всё за {total}$")
+
+# =========================
+# ПРОДАТЬ КОНКРЕТНО
+# пример: продать мясо
+# =========================
+@router.message(F.text.lower().startswith("продать "))
+async def sell_item(message: types.Message):
+    name = message.text[8:].strip()
+    db = load_db()
+    uid = str(message.from_user.id)
+    if uid not in db:
+        return
+
+    user = db[uid]
+    player = get_player(message.from_user.id)
+    found = None
+    for item in user.get("loot", {}):
+        if name.lower() in item.lower():
+            found = item
+            break
+    if not found:
+        return await message.answer("❌ Нет такой добычи")
+
+    qty = user["loot"][found]
+    PRICE_LIST = {
+        "🥩 Мясо":25,
+        "🦴 Кости зверя":18,
+        "🪶 Перья":12,
+        "🦌 Обычная шкура":120,
+        "🐗 Клык дикого вепря":900,
+        "🐺 Шкура волка":480,
+        "🦅 Перо беркута":1100,
+        "🐻 Коготь медведя":1200,
+        "🦌 Рога оленя":600,
+        "🐺 Шкура альфа-волка":2500,
+        "🦌 Рога матёрого оленя":1800,
+        "🐆 Шкура рыси":2900,
+        "👑 Голова альфа-волка":6000,
+        "🌟 Легендарная шкура зверя":8500,
+    }
+    price = PRICE_LIST.get(found, 0) * qty
+    del user["loot"][found]
+    player["money"] += price
+    save_player(message.from_user.id, player)
+    save_db(db)
+    await message.answer(f"💰 Продано {found} ×{qty} за {price}$")

@@ -1,0 +1,34 @@
+{
+    "852666681": {
+        "store": {
+            "owned": false,
+            "status": "closed",
+            "level": 0,
+            "stock": 0,
+            "income": 190000,
+            "cycle": 3,
+            "last_cycle": 1771628001.1237795,
+            "cashbox": 0,
+            "total_earned": 0,
+            "upgrades": 0,
+            "max_stock": 600,
+            "max_cash": 650000
+        }
+    },
+    "8477212597": {
+        "store": {
+            "owned": true,
+            "status": "closed",
+            "level": 3,
+            "stock": 596,
+            "income": 190000,
+            "cycle": 3600,
+            "last_cycle": 1771963891.9129121,
+            "cashbox": 650000,
+            "total_earned": 1080000,
+            "upgrades": 3,
+            "max_stock": 600,
+            "max_cash": 650000
+        }
+    }
+}

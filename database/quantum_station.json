@@ -1,0 +1,18 @@
+{
+    "852666681": {
+        "quantum": {
+            "owned": true,
+            "status": "closed",
+            "level": 0,
+            "stock": 0,
+            "income": 200000000,
+            "cycle": 3600,
+            "last_cycle": 1771672113.8745444,
+            "cashbox": 2554100060,
+            "total_earned": 2554100060,
+            "upgrades": 0,
+            "max_stock": 10,
+            "max_cash": 8000000000
+        }
+    }
+}

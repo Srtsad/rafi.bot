@@ -1,0 +1,32 @@
+{
+    "7455246670": {
+        "bank": {
+            "owned": false,
+            "status": "closed",
+            "level": 0,
+            "stock": 0,
+            "income": 50000,
+            "cycle": 2,
+            "last_cycle": 0,
+            "cashbox": 0,
+            "total_earned": 0,
+            "upgrades": 0
+        }
+    },
+    "852666681": {
+        "bank": {
+            "owned": true,
+            "status": "closed",
+            "level": 3,
+            "stock": 42,
+            "income": 30000000,
+            "cycle": 2,
+            "last_cycle": 1771605945.4766088,
+            "cashbox": 500000000,
+            "total_earned": 626271001,
+            "upgrades": 3,
+            "max_stock": 60,
+            "max_cash": 500000000
+        }
+    }
+}

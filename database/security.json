@@ -1,0 +1,34 @@
+{
+    "852666681": {
+        "security": {
+            "owned": true,
+            "status": "closed",
+            "level": 0,
+            "staff": 5,
+            "income": 100000,
+            "cycle": 600,
+            "last_cycle": 1771626130.6084855,
+            "cashbox": 80000,
+            "total_earned": 196587,
+            "upgrades": 0,
+            "max_staff": 5,
+            "max_cash": 80000
+        }
+    },
+    "8477212597": {
+        "security": {
+            "owned": true,
+            "status": "closed",
+            "level": 2,
+            "staff": 5,
+            "income": 220000,
+            "cycle": 600,
+            "last_cycle": 1771697222.6880887,
+            "cashbox": 350000,
+            "total_earned": 784783,
+            "upgrades": 2,
+            "max_staff": 20,
+            "max_cash": 350000
+        }
+    }
+}

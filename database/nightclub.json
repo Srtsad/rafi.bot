@@ -1,0 +1,64 @@
+{
+    "852666681": {
+        "club": {
+            "owned": true,
+            "status": "closed",
+            "level": 0,
+            "staff": 3,
+            "income": 100000,
+            "cycle": 3,
+            "last_cycle": 1771619785.2071257,
+            "cashbox": 100000,
+            "total_earned": 366734,
+            "upgrades": 0,
+            "max_staff": 5,
+            "max_cash": 100000
+        }
+    },
+    "1282393103": {
+        "club": {
+            "owned": true,
+            "status": "active",
+            "level": 3,
+            "staff": 35,
+            "income": 900000,
+            "cycle": 3,
+            "last_cycle": 1771619880.1697292,
+            "cashbox": 100000,
+            "total_earned": 155343,
+            "upgrades": 3,
+            "max_staff": 35,
+            "max_cash": 10000000
+        }
+    },
+    "8477212597": {
+        "club": {
+            "owned": true,
+            "status": "active",
+            "level": 1,
+            "staff": 5,
+            "income": 300000,
+            "cycle": 3600,
+            "last_cycle": 1771695308.42757,
+            "cashbox": 0,
+            "total_earned": 0,
+            "upgrades": 1,
+            "max_staff": 10,
+            "max_cash": 250000
+        }
+    },
+    "7455246670": {
+        "club": {
+            "owned": false,
+            "status": "closed",
+            "level": 0,
+            "staff": 0,
+            "income": 100000,
+            "cycle": 3600,
+            "last_cycle": 0,
+            "cashbox": 0,
+            "total_earned": 0,
+            "upgrades": 0
+        }
+    }
+}

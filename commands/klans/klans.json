@@ -1,0 +1,105 @@
+{
+    "1": {
+        "id": 1,
+        "name": "Тест",
+        "owner": 852666681,
+        "members": [
+            852666681
+        ],
+        "battle_members": [
+            852666681
+        ],
+        "type": "открытый",
+        "rating": 0,
+        "exp": 0,
+        "money": 10000000,
+        "wins": 0,
+        "losses": 0,
+        "attacked_by": 0,
+        "created_at": "2026-02-25T19:44:20.157619",
+        "settings": {
+            "invite": 5,
+            "kick": 4,
+            "ranks": 4,
+            "withdraw": 5,
+            "rob": 5,
+            "war": 4,
+            "rename": 3
+        },
+        "members_rank": {
+            "852666681": 5
+        }
+    },
+    "2": {
+        "id": 2,
+        "name": "Тест 223",
+        "owner": 7455246670,
+        "members": [
+            7455246670
+        ],
+        "battle_members": [
+            7455246670
+        ],
+        "type": "открытый",
+        "rating": 0,
+        "exp": 0,
+        "money": 10000000,
+        "wins": 0,
+        "losses": 0,
+        "attacked_by": 0,
+        "created_at": "2026-02-25T20:09:03.904145",
+        "settings": {
+            "invite": 5,
+            "kick": 4,
+            "ranks": 4,
+            "withdraw": 5,
+            "rob": 5,
+            "war": 4,
+            "rename": 3
+        },
+        "members_rank": {
+            "7455246670": 5
+        }
+    },
+    "3": {
+        "id": 3,
+        "name": "0000",
+        "owner": 8477212597,
+        "members": [
+            8477212597
+        ],
+        "battle_members": [
+            8477212597
+        ],
+        "type": "открытый",
+        "rating": 0,
+        "exp": 0,
+        "money": 0,
+        "wins": 0,
+        "losses": 0,
+        "attacked_by": 0,
+        "created_at": "2026-02-25T20:29:10.552567"
+    },
+    "1772117649469": {
+        "name": "сесемасесе",
+        "owner": 7162532577,
+        "members": [
+            7162532577
+        ],
+        "members_rank": {
+            "7162532577": 5
+        },
+        "settings": {
+            "invite": 5,
+            "kick": 5,
+            "ranks": 5,
+            "withdraw": 5,
+            "rob": 5,
+            "war": 5,
+            "rename": 5
+        },
+        "type": "открытый",
+        "money": 7492829373629276393618263926191829363926196382,
+        "rating": 0
+    }
+}

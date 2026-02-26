@@ -1,0 +1,18 @@
+{
+    "852666681": {
+        "security": {
+            "owned": true,
+            "status": "active",
+            "level": 0,
+            "guards": 5,
+            "income": 400000000,
+            "cycle": 3600,
+            "last_cycle": 1771623195.4326231,
+            "cashbox": 0,
+            "total_earned": 0,
+            "upgrades": 0,
+            "max_guards": 5,
+            "max_cash": 10000000000
+        }
+    }
+}

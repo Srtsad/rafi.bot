@@ -1,0 +1,48 @@
+{
+    "852666681": {
+        "lab": {
+            "owned": true,
+            "status": "closed",
+            "level": 3,
+            "stock": 49,
+            "income": 100000000,
+            "cycle": 3,
+            "last_cycle": 1771605957.8908732,
+            "cashbox": 2000000000,
+            "total_earned": 2186061305,
+            "upgrades": 3,
+            "max_stock": 60,
+            "max_cash": 2000000000
+        }
+    },
+    "7455246670": {
+        "lab": {
+            "owned": false,
+            "status": "closed",
+            "level": 0,
+            "stock": 0,
+            "income": 40000,
+            "cycle": 3600,
+            "last_cycle": 0,
+            "cashbox": 0,
+            "total_earned": 0,
+            "upgrades": 0
+        }
+    },
+    "8477212597": {
+        "lab": {
+            "owned": true,
+            "status": "active",
+            "level": 3,
+            "stock": 60,
+            "income": 100000000,
+            "cycle": 3600,
+            "last_cycle": 1772118293.9862518,
+            "cashbox": 0,
+            "total_earned": 6486136419,
+            "upgrades": 3,
+            "max_stock": 60,
+            "max_cash": 2000000000
+        }
+    }
+}
